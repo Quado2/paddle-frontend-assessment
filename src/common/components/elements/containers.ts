@@ -42,3 +42,8 @@ background-image: ${({theme}) =>  "linear-gradient(180deg,"+theme.bg.default_1+"
 position: relative;
 overflow-y: hidden;
 `
+
+export const BottomMargin = styled(Flex)`
+  height: 1rem;
+  margin-bottom: 12rem;
+`;

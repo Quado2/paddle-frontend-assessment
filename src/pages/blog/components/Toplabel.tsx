@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { PageWrapper, Glass } from "../../../common/components/elements";
 import { Flex } from "../../../common/components/elements";
-import { Subtitle } from "../../../common/components/elements/text";
+import { Title2 } from "../../../common/components/elements/text";
 import { DashedText } from "../../../common/components/UI";
 
 export const TopWrapper = styled(PageWrapper)`
@@ -72,7 +72,7 @@ export function Toplabel(props: IToblabelProps) {
          <DashedText text="BLOG" />
        </div>
        <div className="article">
-         <Subtitle>Articles and News</Subtitle>
+         <Title2>Articles and News</Title2>
        </div>
 
       </TextWrapper>

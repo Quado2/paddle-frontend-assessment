@@ -12,6 +12,7 @@ export const MainWrapper = styled(Flex)`
   width: 100vw;
   min-height: 100vh;
   flex-direction: column;
+  justify-content: flex-start;
   position: relative;
  
 `;

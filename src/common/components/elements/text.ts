@@ -8,6 +8,7 @@ interface TextProps {
   width?: string;
   mb?:string;
   ls?:string;
+  color?: string
 }
 
 interface SubTitleProps {
@@ -16,7 +17,7 @@ interface SubTitleProps {
 }
 
 export const Text1 = styled.h3<TextProps>`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme, color }) => color? theme.text[color] : theme.text.primary};
   opacity: ${({ muted }) => (muted ? 0.54 : 1)};
   font-size: ${({ size }) => size};
   font-weight: ${({ weight }) => weight};
@@ -30,7 +31,7 @@ export const Text1 = styled.h3<TextProps>`
 
 export const Title = styled.h1<TextProps>`
   
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme, color }) => color? theme.text[color] : theme.text.primary};
   opacity: ${({ muted }) => (muted ? 0.54 : 1)};
   font-size: ${({ size }) => size};
   width: ${({ width }) => width};
@@ -47,7 +48,13 @@ export const Bold = styled.span`
   font-weight: 600;
 `
 
-export const Subtitle = styled.article<SubTitleProps>`
+export const Title2 = styled.article<SubTitleProps>`
   color: ${({ theme, color}) =>  color? theme.text[color] : theme.text.primary};
   font-size: 2.5rem;
+`
+
+export const Subtitle = styled.article<SubTitleProps>`
+  color: ${({ theme, color}) =>  color? theme.text[color] : theme.text.primary};
+  font-size: 2rem;
+  font-weight: 500;
 `
