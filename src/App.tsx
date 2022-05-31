@@ -1,11 +1,17 @@
 
 
 
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { lightTheme } from "./theme";
 import { Layout } from "./common/layout";
+import {ComingSoon, AboutUs, Blog} from './pages'
+
+const AppWrapper = styled.div`
+  width: 100%;
+  min-height: 100vh;
+`
 
 function App() {
   return (
@@ -13,7 +19,10 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={  <App />} />
+           
+            <Route path="/" element={  <ComingSoon />} />
+            <Route path="/about-us" element={  <AboutUs />} />
+            <Route path="/blog" element={  <Blog />} />
            
           </Routes>
         </Layout>

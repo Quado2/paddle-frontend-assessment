@@ -7,7 +7,7 @@ import { Timer, ButtonInput, Input} from "./component";
 
 export interface IHomeProps {}
 
-export default function Home(props: IHomeProps) {
+export  function ComingSoon(props: IHomeProps) {
   return (
     <PageWrapper>
       <Flex>

@@ -8,15 +8,15 @@ export const ListContainer = styled(Flex)`
 
 `
 
-export const MainWrapper = styled(Flex)<any>`
+export const MainWrapper = styled(Flex)`
   width: 100vw;
   min-height: 100vh;
   flex-direction: column;
   position: relative;
-
+ 
 `;
 
-export const MainNav = styled.nav<any>`
+export const MainNav = styled.nav`
   width: 100%;
   height: 15vh;
   position: absolute;
