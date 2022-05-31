@@ -27,7 +27,9 @@ export const lightTheme = {
     primary: "#FFFFFF",
     inverted: "#000000",
     muted: "#707070",
-    active_link: "#FF00F7"
+    active_link: "#FF00F7",
+    blog_main: "#1E232C",
+    secondary_button: "#7C0ED5"
   },
   circle:{
     bottom: "#211539"

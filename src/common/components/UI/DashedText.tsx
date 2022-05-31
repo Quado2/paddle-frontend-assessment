@@ -7,6 +7,12 @@ interface DashProps {
   width?: string;
   color?: string;
 }
+export interface IDashedTextProps {
+  text: string;
+  dashHeight?: string;
+  dashWidth?: string;
+  color?: string;
+}
 
 const DashedWrapper = styled.div<DashProps>`
 
@@ -23,12 +29,7 @@ const DashedWrapper = styled.div<DashProps>`
   }
 `;
 
-export interface IDashedTextProps {
-  text: string;
-  dashHeight?: string;
-  dashWidth?: string;
-  color?: string;
-}
+
 
 export const Text = styled(Text1)<DashProps>`
   color: ${({ theme, color }) =>
@@ -40,7 +41,7 @@ export const Text = styled(Text1)<DashProps>`
 
 export function DashedText({ text, color, dashWidth, dashHeight }: IDashedTextProps) {
   return (
-    <DashedWrapper height={dashHeight} width={dashWidth} >
+    <DashedWrapper color={color} height={dashHeight} width={dashWidth} >
       <div></div>
       <Text color={color}>{text}</Text>
     </DashedWrapper>

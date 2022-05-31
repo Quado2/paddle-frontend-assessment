@@ -22,8 +22,8 @@ export const Moon = styled.div<MoonProps>`
 export const Glass = styled.div`
   width: 100%;
   height: 100%;
-  background: rgb(202, 163, 240, 0.16);
-  backdrop-filter: blur(14px);
+  background: rgb(252, 253, 252, 0.09);
+  backdrop-filter: blur(8px);
   
 
 `
