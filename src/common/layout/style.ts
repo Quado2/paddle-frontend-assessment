@@ -14,7 +14,7 @@ export const MainWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
- 
+  overflow-y: scroll;
 `;
 
 export const MainNav = styled.nav`

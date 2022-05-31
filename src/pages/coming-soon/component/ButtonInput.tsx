@@ -3,12 +3,14 @@ import styled from "styled-components";
 import { Button, Input } from "../../../common/components/elements";
 import { Flex } from "../../../common/components/elements/containers";
 
-const ButtonInputWrapper = styled(Flex)`
+const ButtonInputWrapper = styled(Flex)<IButtonInputProps>`
   width: 32rem;
   background: ${({ theme }) => theme.bg.primary};
   height: 3.2rem;
   border-radius: 1.6rem;
   position: relative;
+  transition: all ease-in .9s .3s;
+  transform: ${({show}) => show ? "translateY(-4rem)": "translateY(0)" } 
 `;
 
 const StyledInput = styled(Input)`
@@ -29,11 +31,13 @@ const StyledButton = styled(Button)`
   right: -1px;
 `;
 
-export interface IButtonInputProps {}
+export interface IButtonInputProps {
+  show: boolean
+}
 
-export function ButtonInput(props: IButtonInputProps) {
+export function ButtonInput({show}: IButtonInputProps) {
   return (
-    <ButtonInputWrapper>
+    <ButtonInputWrapper show={show} >
       <StyledInput type="text" placeholder="Enter your email address" />
       <StyledButton>JOIN OUR WAITING LIST</StyledButton>
     </ButtonInputWrapper>

@@ -3,19 +3,17 @@ import * as React from "react";
 import styled, { Interpolation } from "styled-components";
 
 export interface MoonProps {
-  size: string;
-  color: string;
+ color:string;
   styles?: Interpolation<React.CSSProperties>;
 }
 
 export const Moon = styled.div<MoonProps>`
-  width: ${({ size }) => size};
-  height: ${({ size }) => size};
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  position: absolute;
   ${({ styles }) => styles};
-  background-image: ${({ color }) =>
-    "linear-gradient(177deg, " + color + " 0%," + "#19073B " + " 100%)"};
+  background-image: ${({ theme, color }) =>
+    "linear-gradient(177deg, " + theme.moon[color] + " 0%," + "#19073B " + " 100%)"};
   z-index: 0;
 `;
 

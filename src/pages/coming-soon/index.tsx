@@ -1,27 +1,44 @@
-import * as React from "react";
-import { DetailsWrapper, Bold, Circle, TextWrapper } from "./styles";
-import { Flex } from "../../common/components/elements/containers";
-import { Title, Text1, Moon, PageWrapper } from "../../common/components/elements";
+import { useContext } from "react";
 
-import { Timer, ButtonInput, Input} from "./component";
+import {
+  DetailsWrapper,
+  Bold,
+  Circle,
+  TextWrapper,
+  MoonsWrapper,
+  Text,
+} from "./styles";
+import { Flex } from "../../common/components/elements/containers";
+import {
+  Title,
+  Text1,
+  Moon,
+  PageWrapper,
+} from "../../common/components/elements";
+
+import { AppContext } from "../../context/AppContext";
+import { Timer, ButtonInput, Input } from "./component";
 
 export interface IHomeProps {}
 
-export  function ComingSoon(props: IHomeProps) {
+export function ComingSoon(props: IHomeProps) {
+
+  const {showContactForm} = useContext(AppContext);
+
   return (
     <PageWrapper>
       <Flex>
         <TextWrapper>
-          <Title casing="uppercase" size="3rem">
+          <Text show={showContactForm}>
             Something awesome is
-          </Title>
+          </Text>
         </TextWrapper>
       </Flex>
       <Flex>
         <TextWrapper>
-          <Title casing="uppercase" size="3rem">
+          <Text show={showContactForm}>
             coming soon
-          </Title>
+          </Text>
         </TextWrapper>
       </Flex>
       <Flex>
@@ -45,15 +62,24 @@ export  function ComingSoon(props: IHomeProps) {
         <Input label="First Name..." />
         <Input label="Last Name..." />
       </Flex>
-      <Flex mt="1.5rem" mb="20rem" >
-        <ButtonInput />
+      <Flex mt="1.5rem" mb="20rem">
+        <ButtonInput show={showContactForm} />
       </Flex>
-      
-      <Circle></Circle>
-      <Moon color="#7F1E7B" size="6.6rem" styles={{top:"17vh",left: "12.1vw"}}></Moon>
-      <Moon color="#203C71" size="5rem" styles={{top:"35vh",right: "19.5vw"}}></Moon>
-      <Moon color="#7C4029" size="9.5rem" styles={{top:"87vh",left: "26vw"}}></Moon>
-    </PageWrapper>
 
+      <Circle></Circle>
+      <MoonsWrapper show={showContactForm}>
+        <div className="left-moon">
+          <Moon color="moon_1" />
+        </div>
+        <div className="right-moon">
+          <Moon color="moon_2" />
+        </div>
+        <div className="bottom-moon">
+          <Moon
+            color="moon_3"
+          ></Moon>
+        </div>
+      </MoonsWrapper>
+    </PageWrapper>
   );
 }

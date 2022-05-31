@@ -35,6 +35,7 @@ export const IconWrapper = styled.div<IconWrapperProps>`
 `;
 
 export const PageWrapper = styled(Flex)`
+min-height: 100vh;
 padding-top: 11rem;
 flex-direction: column;
 justify-content: flex-start;

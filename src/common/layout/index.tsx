@@ -13,13 +13,16 @@ import { IoLogoInstagram } from "react-icons/io";
 import { FaTwitterSquare } from "react-icons/fa";
 import { Text1 } from "../components/elements/text";
 import { ContactUs } from "../components/UI/contact-us";
-
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 export interface ILayoutProps {
   children: JSX.Element;
 }
 
 export function Layout(props: ILayoutProps) {
   // const theme:ThemeType = useTheme();
+
+  const {setShowContactForm} = React.useContext(AppContext);
 
   return (
     <MainWrapper>
@@ -29,7 +32,7 @@ export function Layout(props: ILayoutProps) {
           <List>
             <ListItem>ABOUT US</ListItem>
             <ListItem>BLOG</ListItem>
-            <ListItem background>CONTACT US</ListItem>
+            <ListItem onClick={() => setShowContactForm(true)} background>CONTACT US</ListItem>
           </List>
         </ListContainer>
       </MainNav>

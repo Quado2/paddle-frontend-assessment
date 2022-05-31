@@ -1,15 +1,21 @@
 import { BsArrowRight } from "react-icons/bs";
 import { Input, TextArea } from "../";
 import { ContactWrapper,Text} from "./style";
+import { useContext } from "react";
+import { AppContext } from "../../../../context/AppContext";
 
 import { inputData } from "./data";
 
 export interface IContactUsProps {}
 
 export function ContactUs(props: IContactUsProps) {
+
+  const {showContactForm, setShowContactForm} = useContext(AppContext);
+  
+
   return (
-    <ContactWrapper>
-      <div className="close">
+    <ContactWrapper show={showContactForm}>
+      <div onClick={() => setShowContactForm(false)} className="close">
         <BsArrowRight className="icon" />
       </div>
       <div className="text">

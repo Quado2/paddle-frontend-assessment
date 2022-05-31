@@ -13,6 +13,7 @@ const TimerWrapper = styled(Flex)<TimerProps>`
   border-top-right-radius: ${({last}) => last ? "2px": "none"};
   border-bottom-right-radius: ${({last}) => last ? "2px": "none"};
   margin: .5rem;
+  z-index: 1;
 
  h2{
    font-weight: 600;

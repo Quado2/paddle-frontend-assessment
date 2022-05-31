@@ -1,3 +1,4 @@
+import { BsPhone } from "react-icons/bs"
 
 
 export const lightTheme = {
@@ -37,12 +38,21 @@ export const lightTheme = {
   circle:{
     bottom: "#211539"
   },
+  moon:{
+    moon_1: "#7F1E7B", 
+    moon_2: "#203C71",
+    moon_3: "#7C4029",
+  },
   font:{
     content: "16px"
   },
   
   weight: {
     normal: 400,
+  },
+  screen:{
+    tablet:"768px",
+    phone:"360px",
   }
   
 }

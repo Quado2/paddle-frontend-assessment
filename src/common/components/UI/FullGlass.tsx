@@ -1,24 +1,28 @@
-import * as React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
+import { AppContext } from "../../../context/AppContext";
 
 export interface IFullGlassProps {}
 
-const FGlass = styled.div`
+interface GlassProps {
+  show: boolean
+}
+
+const FGlass = styled.div<GlassProps>`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
   background: rgb(252, 253, 252, 0.09);
-  backdrop-filter: blur(0px);
-  animation: blurIn ease-in .7s .5s forwards;
+  transition: all .9s ease-in  .3s;
+  backdrop-filter: ${({show}) => show ? "blur(14px) ": "blur(0px)"}; ;
+  z-index: ${({show}) => show ? 7 : -1};
 
-  @keyframes blurIn {
-    to{
-      backdrop-filter: blur(14px);
-    }
-  }
+
 `;
 
 export function FullGlass(props: IFullGlassProps) {
-  return <FGlass />;
+
+  const {showContactForm} = useContext(AppContext)
+
+  return <FGlass show={showContactForm} />;
 }
