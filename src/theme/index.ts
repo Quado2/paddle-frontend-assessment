@@ -31,6 +31,9 @@ export const lightTheme = {
     blog_main: "#1E232C",
     secondary_button: "#7C0ED5"
   },
+  button:{
+    primary: "#271AC1"
+  },
   circle:{
     bottom: "#211539"
   },

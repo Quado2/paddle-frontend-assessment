@@ -3,7 +3,7 @@ import * as React from "react";
 import { List, ListItem } from "../components/elements";
 import { MainWrapper } from './style'
 
-import { Logo } from "../components/UI/index";
+import { FullGlass, Logo } from "../components/UI/index";
 import { ListContainer, MainNav, Footer, TextWrapper } from "./style";
 import { Flex, IconWrapper } from "../components/elements/containers";
 import { BsYoutube } from "react-icons/bs";
@@ -12,6 +12,7 @@ import { ImLinkedin } from "react-icons/im";
 import { IoLogoInstagram } from "react-icons/io";
 import { FaTwitterSquare } from "react-icons/fa";
 import { Text1 } from "../components/elements/text";
+import { ContactUs } from "../components/UI/contact-us";
 
 export interface ILayoutProps {
   children: JSX.Element;
@@ -32,6 +33,8 @@ export function Layout(props: ILayoutProps) {
           </List>
         </ListContainer>
       </MainNav>
+      <ContactUs />
+      <FullGlass />
       {props.children}
       <Footer>
         <Flex>
