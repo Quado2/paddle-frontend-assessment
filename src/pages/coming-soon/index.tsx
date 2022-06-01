@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import {
   DetailsWrapper,
@@ -22,9 +22,36 @@ import { Timer, ButtonInput, Input } from "./component";
 
 export interface IHomeProps {}
 
+const DUE_DATE = new Date("6-12-2022").getTime();
+
 export function ComingSoon(props: IHomeProps) {
   const { showContactForm } = useContext(AppContext);
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [days, setDays] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const extraDate = DUE_DATE - new Date().getTime();
+      const newDays = Math.floor(extraDate / (24 * 60 * 60 * 1000));
+      const newHours = Math.floor(
+        (extraDate % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
+      );
+      const newMinutes = Math.floor(
+        (extraDate % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const newSeconds = Math.floor((extraDate % (1000 * 60)) / 1000);
+      setSeconds(newSeconds);
+      setMinutes(newMinutes);
+      setHours(newHours);
+      setDays(newDays);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   return (
     <PageWrapper>
       <Flex>
@@ -48,17 +75,16 @@ export function ComingSoon(props: IHomeProps) {
       </Flex>
 
       <Flex mt="1.5rem">
-        <Timer value={7} type="Days" />
-        <Timer value={24} type="Hours" />
-        <Timer value={54} type="Minutes" />
-        <Timer last value={11} type="Seconds" />
+        <Timer value={days} type="Days" />
+        <Timer value={hours} type="Hours" />
+        <Timer value={minutes} type="Minutes" />
+        <Timer last value={seconds} type="Seconds" />
       </Flex>
 
       <InputWrapper>
-      <Input label="First Name..." />
+        <Input label="First Name..." />
         <Input label="Last Name..." />
       </InputWrapper>
-        
 
       <Flex mt="1.5rem" mb="20rem">
         <ButtonInput show={showContactForm} />
