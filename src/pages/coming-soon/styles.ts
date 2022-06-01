@@ -118,3 +118,11 @@ export const InputWrapper = styled(Flex)`
     flex-direction: column;
   }
 `;
+
+export const TopWrapper = styled.div`
+ 
+
+  @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+   margin-top: 4rem;;
+  }
+`
