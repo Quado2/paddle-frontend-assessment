@@ -13,6 +13,11 @@ h3{
   font-weight: 400;
   line-height: 2rem;
   font-size: 18px;
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    font-size: 12px;
+    line-height: 1.5rem;
+  }
 }
 `
 

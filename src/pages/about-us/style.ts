@@ -6,7 +6,11 @@ interface Props {
   height?: string;
 }
 
-export const IntroWrapper = styled(Flex)`
+interface ShowProps {
+  show?: boolean;
+}
+
+export const IntroWrapper = styled(Flex)<ShowProps>`
   justify-content: flex-end;
   align-items: center;
   margin-top: -2.5rem;
@@ -17,7 +21,8 @@ export const IntroWrapper = styled(Flex)`
     width: 11rem;
     height: 11rem;
     position: absolute;
-    top: 15vh;
+    transition: all ease-in .9s .1s;
+    top: ${({show}) => show ? "11vh" : "15vh"};
 
     @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
     width: 6rem;
@@ -104,10 +109,11 @@ export const BottomMargin = styled(Flex)`
   height: 1rem;
   margin-bottom: 12rem;
 `;
-export const BigText = styled(Title)`
+export const BigText = styled(Title)<ShowProps>`
   font-size: 3rem;
   width: 65rem;
   margin: 10rem 0;
+  text-transform: ${({show}) => show ? "uppercase": "none"};
 
   @media screen and (max-width: ${({ theme }) => theme.screen.small_screen}) {
     font-size: 2.5rem;

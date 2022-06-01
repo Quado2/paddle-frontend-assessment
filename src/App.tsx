@@ -17,11 +17,12 @@ const AppWrapper = styled.div`
 
 function App() {
 
-  const [showContactForm, setShowContactForm] = useState(false)
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [isBlogShowing, setIsBlogShowing] = useState(false);
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <AppContext.Provider value={{showContactForm, setShowContactForm}}>
+      <AppContext.Provider value={{showContactForm, setShowContactForm, isBlogShowing, setIsBlogShowing}}>
         <Router>
           <Layout>
             <Routes>

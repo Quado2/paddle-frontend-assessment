@@ -32,14 +32,19 @@ import {
 } from "./style";
 
 import {HiOutlineArrowNarrowRight} from "react-icons/hi"
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 export interface IAboutUsProps {}
 
 export function AboutUs(props: IAboutUsProps) {
+
+  const {showContactForm} = useContext(AppContext)
+
   return (
     <PageWrapper>
       <Flex>
-        <IntroWrapper>
+        <IntroWrapper show={showContactForm}>
           <LeftGlassWrapper>
             <InnerPaper />
             <Glass />
@@ -72,7 +77,7 @@ export function AboutUs(props: IAboutUsProps) {
         </IntroWrapper>
       </Flex>
       <Flex>
-        <BigText>
+        <BigText show={showContactForm}>
           Metricks was developed because just like you, we need a product that
           could give <Bold>good value</Bold>
         </BigText>

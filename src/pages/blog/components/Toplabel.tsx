@@ -5,12 +5,19 @@ import { Flex } from "../../../common/components/elements";
 import { Title2 } from "../../../common/components/elements/text";
 import { DashedText } from "../../../common/components/UI";
 
-export const TopWrapper = styled(PageWrapper)`
+export const TopWrapper = styled.div`
   padding-top: 0;
   height: 18.5rem;
+  width: 100%;
   flex-direction: row;
   justify-content: flex-start;
   position: relative;
+  background-image: ${({ theme }) =>
+    "linear-gradient(180deg," +
+    theme.bg.default_1 +
+    "," +
+    theme.bg.default_2 +
+    ")"};
 `;
 export const LeftWrapper = styled.div`
   height: 100%;
@@ -21,6 +28,14 @@ export const LeftWrapper = styled.div`
   align-items: center;
   padding-right: 8%;
   padding-top: 2rem;
+
+  @media screen and (max-width: ${({theme}) => theme.screen.tablet}) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    width: 80%;
+  }
 `;
 export const GlassWrapper = styled(Glass)`
   width: 100%;
@@ -35,7 +50,8 @@ export const GlassWrapper = styled(Glass)`
 export const InnerPaper = styled.div`
   width: 10rem;
   height: 15rem;
-  background-image: linear-gradient(177deg, #970f93 0%, #19073b 100%);
+  background-image:  ${({ theme }) =>
+    "linear-gradient(177deg, " + theme.paper.paper_1 + " 0%, #19073b 100%)"};;
 `;
 
 const TextWrapper = styled(Flex)`
@@ -50,10 +66,18 @@ const TextWrapper = styled(Flex)`
 
   .dashed-text{
     margin-left: 19%;
+
+    @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    margin-left: 5%;
+  }
   }
 
   .article{
     margin-left: 23%;
+
+    @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    margin-left: 10%;
+  }
   }
 
 `
@@ -74,7 +98,6 @@ export function Toplabel(props: IToblabelProps) {
        <div className="article">
          <Title2>Articles and News</Title2>
        </div>
-
       </TextWrapper>
     </TopWrapper>
   );

@@ -62,10 +62,18 @@ export const Bold = styled.span`
 export const Title2 = styled.article<SubTitleProps>`
   color: ${({ theme, color}) =>  color? theme.text[color] : theme.text.primary};
   font-size: 2.5rem;
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    font-size: 1.8rem;
+  }
 `
 
 export const Subtitle = styled.article<SubTitleProps>`
   color: ${({ theme, color}) =>  color? theme.text[color] : theme.text.primary};
   font-size: 2rem;
   font-weight: 500;
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    font-size: 1.5rem;
+  }
 `

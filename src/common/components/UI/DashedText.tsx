@@ -37,6 +37,10 @@ export const Text = styled(Text1)<DashProps>`
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 400;
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    font-size: 12px;
+  }
 `;
 
 export function DashedText({ text, color, dashWidth, dashHeight }: IDashedTextProps) {

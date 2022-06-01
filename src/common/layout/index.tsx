@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import { List, ListItem } from "../components/elements";
-import { MainWrapper } from './style'
+import { List } from "../components/elements";
+import { MainWrapper, NavList, Button } from "./style";
 
 import { FullGlass, Logo } from "../components/UI/index";
-import { ListContainer, MainNav, Footer, TextWrapper } from "./style";
+import { ListContainer, MainNav, Footer, TextWrapper, Text } from "./style";
 import { Flex, IconWrapper } from "../components/elements/containers";
 import { BsYoutube } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -15,24 +15,45 @@ import { Text1 } from "../components/elements/text";
 import { ContactUs } from "../components/UI/contact-us";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import { Link, NavLink } from "react-router-dom";
 export interface ILayoutProps {
   children: JSX.Element;
 }
 
 export function Layout(props: ILayoutProps) {
-  // const theme:ThemeType = useTheme();
+  
 
-  const {setShowContactForm} = React.useContext(AppContext);
-
+  const { setShowContactForm, isBlogShowing } = useContext(AppContext);
+ 
   return (
     <MainWrapper>
-      <MainNav>
-        <Logo />
+      <MainNav isBlog={isBlogShowing}>
+        <Link to="/" ><Logo isBlog={isBlogShowing} /></Link>
         <ListContainer>
           <List>
-            <ListItem>ABOUT US</ListItem>
-            <ListItem>BLOG</ListItem>
-            <ListItem onClick={() => setShowContactForm(true)} background>CONTACT US</ListItem>
+            <NavList isBlog={isBlogShowing}>
+              <NavLink
+                to="about-us"
+                className={({isActive}) => "nav-link "  + (isActive ? "active": "")}
+              >
+                ABOUT US
+              </NavLink>
+            </NavList>
+            <NavList isBlog={isBlogShowing}>
+              <NavLink
+                to="blog"
+                className={({isActive}) => "nav-link "  + (isActive ? "active": "")}
+              >
+                BLOG
+              </NavLink>
+            </NavList>
+            <Button
+              isBlog={isBlogShowing}
+              onClick={() => setShowContactForm(true)}
+              background
+            >
+              CONTACT US
+            </Button>
           </List>
         </ListContainer>
       </MainNav>
@@ -41,34 +62,39 @@ export function Layout(props: ILayoutProps) {
       {props.children}
       <Footer>
         <Flex>
-          <IconWrapper bright size="30px">
+          <IconWrapper isBlog ={isBlogShowing} bright size="30px">
             <BsYoutube />
           </IconWrapper>
-          <IconWrapper size="25px">
+          <IconWrapper isBlog ={isBlogShowing} size="25px">
             <FaFacebookSquare />
           </IconWrapper>
-          <IconWrapper size="23px">
+          <IconWrapper isBlog ={isBlogShowing} size="23px">
             <ImLinkedin />
           </IconWrapper>
-          <IconWrapper size="30px">
+          <IconWrapper isBlog ={isBlogShowing} size="30px">
             <IoLogoInstagram />
           </IconWrapper>
-          <IconWrapper size="23px">
+          <IconWrapper isBlog ={isBlogShowing} size="23px">
             <FaTwitterSquare />
           </IconWrapper>
         </Flex>
         <Flex>
           <TextWrapper>
-            <Text1 muted weight="400">Terms of service</Text1>
+            <Text isBlog ={isBlogShowing}>
+              Terms of service
+            </Text>
           </TextWrapper>
           <TextWrapper>
-            <Text1 muted weight="400" >Privacy policy</Text1>
+            <Text isBlog ={isBlogShowing}>
+              Privacy policy
+            </Text>
           </TextWrapper>
-          
         </Flex>
         <Flex>
           <TextWrapper>
-          <Text1 muted weight="400" >Copyright 2021 @ Peddle Technologies. All Rights </Text1>
+            <Text isBlog ={isBlogShowing} >
+              Copyright 2021 @ Peddle Technologies. All Rights{" "}
+            </Text >
           </TextWrapper>
         </Flex>
       </Footer>
