@@ -43,7 +43,7 @@ export function Timer ({value, type,last}: IAppProps) {
   return (
     <TimerWrapper last={last} >
       <h2>{value}</h2>
-      <h3>{type}</h3>
+      <h3>{(value < 2) ? type.slice(0,-1): type}</h3>
     </TimerWrapper>
   );
 }
