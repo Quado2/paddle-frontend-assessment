@@ -1,4 +1,4 @@
-import styled, { Interpolation } from "styled-components";
+import styled from "styled-components";
 import { Title } from "../../common/components/elements";
 import { Flex } from "../../common/components/elements/containers";
 
