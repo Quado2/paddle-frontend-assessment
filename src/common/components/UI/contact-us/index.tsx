@@ -23,8 +23,9 @@ export function ContactUs(props: IContactUsProps) {
         <Text>you can send us a message!</Text>
       </div>
       {inputData &&
-        inputData.map((data) => (
+        inputData.map((data, i) => (
           <Input
+            key = {i}
             name={data.name}
             type={data.type}
             placeholder={data.placeholder}
