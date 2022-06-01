@@ -8,6 +8,7 @@ import {
   MoonsWrapper,
   Text,
   InputWrapper,
+  TopWrapper,
 } from "./styles";
 import { Flex } from "../../common/components/elements/containers";
 import {
@@ -53,7 +54,8 @@ export function ComingSoon(props: IHomeProps) {
   }, []);
   return (
     <PageWrapper>
-      <Flex>
+     <TopWrapper>
+     <Flex>
         <TextWrapper>
           <Text show={showContactForm}>Something awesome is</Text>
         </TextWrapper>
@@ -63,6 +65,8 @@ export function ComingSoon(props: IHomeProps) {
           <Text show={showContactForm}>coming soon</Text>
         </TextWrapper>
       </Flex>
+     </TopWrapper>
+      
       <Flex>
         <DetailsWrapper>
           <Text1 weight="300" size="16px">
