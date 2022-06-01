@@ -36,6 +36,9 @@ export function ContactUs(props: IContactUsProps) {
         title="Tell Us What You Need Help With:"
         placeholder='Enter A Topic, Like "Channel Problem..." '
       />
+      <div className="button">
+        <button>SEND NOW</button>
+      </div>
     </ContactWrapper>
   );
 }

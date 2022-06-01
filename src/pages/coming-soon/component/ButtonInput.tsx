@@ -10,7 +10,11 @@ const ButtonInputWrapper = styled(Flex)<IButtonInputProps>`
   border-radius: 1.6rem;
   position: relative;
   transition: all ease-in .9s .3s;
-  transform: ${({show}) => show ? "translateY(-4rem)": "translateY(0)" } 
+  transform: ${({show}) => show ? "translateY(-4rem)": "translateY(0)" };
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}){
+     width: 95vw;
+    }
 `;
 
 const StyledInput = styled(Input)`
@@ -23,12 +27,16 @@ const StyledInput = styled(Input)`
 
 const StyledButton = styled(Button)`
   width: 40%;
-  height: 100%;
+  height: 102%;
   border-radius: 1.6rem;
   background-color: ${({ theme }) => theme.bg.button_primary};
   color: ${({ theme }) => theme.text.primary};
   position: absolute;
   right: -1px;
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}){
+     font-size: .65rem;
+    }
 `;
 
 export interface IButtonInputProps {

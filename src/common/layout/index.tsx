@@ -59,15 +59,16 @@ export function Layout(props: ILayoutProps) {
         </Flex>
         <Flex>
           <TextWrapper>
-            <Text1 muted weight="400" size="16px">Terms of service</Text1>
+            <Text1 muted weight="400">Terms of service</Text1>
           </TextWrapper>
           <TextWrapper>
-            <Text1 muted weight="400" size="16px">Privacy policy</Text1>
+            <Text1 muted weight="400" >Privacy policy</Text1>
           </TextWrapper>
+          
         </Flex>
         <Flex>
           <TextWrapper>
-          <Text1 muted weight="400" size="16px">Copyright 2021 @ Peddle Technologies. All Rights </Text1>
+          <Text1 muted weight="400" >Copyright 2021 @ Peddle Technologies. All Rights </Text1>
           </TextWrapper>
         </Flex>
       </Footer>

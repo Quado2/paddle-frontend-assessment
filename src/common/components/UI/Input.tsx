@@ -24,10 +24,19 @@ const InputWrapper = styled.div`
     outline: none;
     padding: 2rem;
     margin-top: 1rem;
+
+    @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+    padding: 1rem;
+    font-size: .8rem;
+  }
   }
 
   input {
     height: 5rem;
+
+    @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+   height: 3rem
+  }    
   }
 
   textarea {

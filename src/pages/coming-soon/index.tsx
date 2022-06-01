@@ -7,6 +7,7 @@ import {
   TextWrapper,
   MoonsWrapper,
   Text,
+  InputWrapper,
 } from "./styles";
 import { Flex } from "../../common/components/elements/containers";
 import {
@@ -22,23 +23,18 @@ import { Timer, ButtonInput, Input } from "./component";
 export interface IHomeProps {}
 
 export function ComingSoon(props: IHomeProps) {
-
-  const {showContactForm} = useContext(AppContext);
+  const { showContactForm } = useContext(AppContext);
 
   return (
     <PageWrapper>
       <Flex>
         <TextWrapper>
-          <Text show={showContactForm}>
-            Something awesome is
-          </Text>
+          <Text show={showContactForm}>Something awesome is</Text>
         </TextWrapper>
       </Flex>
       <Flex>
         <TextWrapper>
-          <Text show={showContactForm}>
-            coming soon
-          </Text>
+          <Text show={showContactForm}>coming soon</Text>
         </TextWrapper>
       </Flex>
       <Flex>
@@ -58,10 +54,12 @@ export function ComingSoon(props: IHomeProps) {
         <Timer last value={11} type="Seconds" />
       </Flex>
 
-      <Flex mt="1.5rem">
-        <Input label="First Name..." />
+      <InputWrapper>
+      <Input label="First Name..." />
         <Input label="Last Name..." />
-      </Flex>
+      </InputWrapper>
+        
+
       <Flex mt="1.5rem" mb="20rem">
         <ButtonInput show={showContactForm} />
       </Flex>
@@ -75,9 +73,7 @@ export function ComingSoon(props: IHomeProps) {
           <Moon color="moon_2" />
         </div>
         <div className="bottom-moon">
-          <Moon
-            color="moon_3"
-          ></Moon>
+          <Moon color="moon_3"></Moon>
         </div>
       </MoonsWrapper>
     </PageWrapper>

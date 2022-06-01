@@ -6,6 +6,10 @@ import { Flex } from "../components/elements/containers";
 export const ListContainer = styled(Flex)`
  width: 25rem;
 
+ @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+  width: 68vw; 
+  }
+
 `
 
 export const MainWrapper = styled(Flex)`
@@ -28,12 +32,15 @@ export const MainNav = styled.nav`
   justify-content: space-between;
   padding: 0 7vw;
   z-index: 5;
+
+
+  
 `;
 
 
 export const Footer = styled.footer`
   width: 100%;
-  height: 20vh;
+  height: 25vh;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -42,8 +49,9 @@ export const Footer = styled.footer`
   justify-items: center;
   align-items: center;
   z-index: 5;
+  margin: 0;
 `
 
 export const TextWrapper = styled.div`
-  margin: 0 1rem 1.2rem 1rem;
+  margin: 0 1rem .5rem 1rem;
 `

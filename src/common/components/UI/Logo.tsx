@@ -7,6 +7,11 @@ import logo1 from '../../../assets/images/logo1.png'
 export const LogoWrapper = styled(Flex)`
   width: 90px;
   height: 70px;
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    width: 40px;
+    height: 30px;
+   }
 `
 
 

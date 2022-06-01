@@ -10,8 +10,7 @@ interface MoonProps {
   show: boolean;
 }
 
-export const TextWrapper = styled.div<TextWrapperProps>`
-  ${({ styles }) => styles};
+export const TextWrapper = styled.div`
   z-index: 1;
 `;
 
@@ -20,6 +19,11 @@ export const DetailsWrapper = styled.div`
   width: 40rem;
   text-align: center;
   z-index: 1;
+
+  @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
 `;
 
 export const Bold = styled.span`
@@ -49,6 +53,7 @@ export const Circle = styled.div`
 `;
 
 export const MoonsWrapper = styled.div<MoonProps>`
+  height: 100%;
   .left-moon {
     position: absolute;
     transition: ease-in 0.9s 0.3s;
@@ -56,6 +61,12 @@ export const MoonsWrapper = styled.div<MoonProps>`
     left: 12.1vw;
     width: 6.6rem;
     height: 6.6rem;
+
+    @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+      width: 4.6rem;
+      height: 4.6rem;
+      left: 10vw;
+    }
   }
 
   .right-moon {
@@ -65,25 +76,48 @@ export const MoonsWrapper = styled.div<MoonProps>`
     right: 19.5vw;
     width: 5rem;
     height: 5rem;
+
+    @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+      width: 3.5rem;
+      height: 3.5rem;
+      right: 10vw;
+    }
   }
 
   .bottom-moon {
     position: absolute;
     transition: ease-in 0.9s 0.3s;
-    top: ${({ show }) => (show ? "80vh" : "87vh")};
+    bottom: ${({ show }) => (show ? "23vh" : "17vh")};
     left: ${({ show }) => (show ? "29vw" : "26vw")};
     width: 9.5rem;
     height: 9.5rem;
 
-    @media screen and (max-width: ${({theme}) => theme.screen.tablet}){
-      top: ${({ show }) => (show ? "68vh" : "72vh")};
+    @media screen and (max-width: ${({ theme }) => theme.screen.tablet}) {
+      bottom: ${({ show }) => (show ? "20vh" : "15vh")};
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+      width: 7rem;
+      height: 7rem;
+      bottom: ${({ show }) => (show ? "38vh" : "28vh")};
     }
   }
-
 `;
 
 export const Text = styled(Title)<MoonProps>`
-  text-transform: ${({show}) => show ? "lowercase": "uppercase"};
+  text-transform: ${({ show }) => (show ? "lowercase" : "uppercase")};
   font-size: 3rem;
   font-weight: 600;
-`
+
+  @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+    font-size: 1.7rem;
+  }
+`;
+
+export const InputWrapper = styled(Flex)`
+  margin-top: 1rem;
+  z-index: 1;
+  @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+    flex-direction: column;
+  }
+`;

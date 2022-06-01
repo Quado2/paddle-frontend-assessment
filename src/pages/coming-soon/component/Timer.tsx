@@ -15,6 +15,11 @@ const TimerWrapper = styled(Flex)<TimerProps>`
   margin: .5rem;
   z-index: 1;
 
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}){
+      width: 70px;
+      height: 90px 
+    }
+
  h2{
    font-weight: 600;
    font-size: 2.2rem;

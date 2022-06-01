@@ -15,6 +15,12 @@ export const ListItem = styled.li<ListItemProps>`
     color: ${({ theme, background}) => background ? theme.text.primary: theme.text.active_link};
     background-color: ${({ theme, background }) => background ? theme.text.active_link: "transparent"};
   }
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+   
+    font-size: 12px;
+    padding: .6rem .9rem
+   }
 `;
 
 export const List = styled.ul`
@@ -27,5 +33,10 @@ export const List = styled.ul`
 
   ${ListItem}:nth-child(2) {
     transform: translateX(-1.1rem);
+
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}) {
+    transform: translateX(0);
+   }
   }
+
 `;
