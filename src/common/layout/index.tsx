@@ -11,7 +11,6 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { ImLinkedin } from "react-icons/im";
 import { IoLogoInstagram } from "react-icons/io";
 import { FaTwitterSquare } from "react-icons/fa";
-import { Text1 } from "../components/elements/text";
 import { ContactUs } from "../components/UI/contact-us";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";

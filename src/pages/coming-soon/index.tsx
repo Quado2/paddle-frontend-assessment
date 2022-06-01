@@ -11,7 +11,6 @@ import {
 } from "./styles";
 import { Flex } from "../../common/components/elements/containers";
 import {
-  Title,
   Text1,
   Moon,
   PageWrapper,

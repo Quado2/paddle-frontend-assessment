@@ -1,4 +1,4 @@
-import styled, { Interpolation } from "styled-components";
+import styled from "styled-components";
 import { Flex, Title } from "../../common/components/elements";
 
 interface Props {

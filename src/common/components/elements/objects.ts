@@ -13,7 +13,7 @@ export const Moon = styled.div<MoonProps>`
   border-radius: 50%;
   ${({ styles }) => styles};
   background-image: ${({ theme, color }) =>
-    "linear-gradient(177deg, " + theme.moon[color] + " 0%," + "#19073B " + " 100%)"};
+    "linear-gradient(177deg, " + theme.moon[color] + " 0%, #19073B 100%)"};
   z-index: 0;
 `;
 

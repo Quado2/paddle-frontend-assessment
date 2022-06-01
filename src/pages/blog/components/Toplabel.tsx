@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { PageWrapper, Glass } from "../../../common/components/elements";
+import { Glass } from "../../../common/components/elements";
 import { Flex } from "../../../common/components/elements";
 import { Title2 } from "../../../common/components/elements/text";
 import { DashedText } from "../../../common/components/UI";

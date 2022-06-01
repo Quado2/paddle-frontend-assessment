@@ -22,7 +22,7 @@ export function Blog(props: IBlogProps) {
     return () => {
       setIsBlogShowing(false);
     };
-  }, []);
+  }, [setIsBlogShowing]);
 
   return (
     <BlogWrapper>

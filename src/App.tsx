@@ -4,15 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lightTheme } from "./theme";
 import { Layout } from "./common/layout";
 import { ComingSoon, AboutUs, Blog } from "./pages";
-import { ContactUs } from "./common/components/UI/contact-us";
 import { AppContext } from "./context/AppContext";
 import { useState } from "react";
-
-const AppWrapper = styled.div`
-  width: 100%;
-  min-height: 100vh;
-`;
-
 
 
 function App() {
