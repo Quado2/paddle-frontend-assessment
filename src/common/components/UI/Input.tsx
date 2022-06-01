@@ -10,11 +10,11 @@ export interface IInputProps {
 }
 
 const InputWrapper = styled.div`
-  width: 80%;
+  width: 85%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.3rem;
 
   .input-item {
     width: 100%;

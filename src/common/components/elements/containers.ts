@@ -10,7 +10,7 @@ export interface FlexProps {
 export interface IconWrapperProps {
   size: string;
   bright?: boolean;
-  isBlog?: boolean
+  isBlog?: boolean;
 }
 
 export const Flex = styled.div<FlexProps>`
@@ -28,12 +28,14 @@ export const Flex = styled.div<FlexProps>`
 export const IconWrapper = styled.div<IconWrapperProps>`
   color: ${({ theme }) => theme.text.primary};
   font-size: ${({ size }) => size};
-  color: ${({ theme, isBlog }) => isBlog ? theme.text.inverted: theme.text.primary};
+  color: ${({ theme, isBlog }) =>
+    isBlog ? theme.text.inverted : theme.text.primary};
   opacity: ${({ bright }) => (bright ? 1 : 0.54)};
   margin: 0.5rem 1rem;
 `;
 
 export const PageWrapper = styled(Flex)`
+  
   min-height: 100vh;
   padding-top: 11rem;
   flex-direction: column;
