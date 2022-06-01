@@ -10,6 +10,8 @@ export interface IDetailProps {
 }
 
 const DetailWrapper = styled.div`
+  width: 100%;
+  
   .top {
     display: flex;
     flex-direction: column;

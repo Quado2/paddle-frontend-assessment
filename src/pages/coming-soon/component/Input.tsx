@@ -9,6 +9,11 @@ const InputWrapper = styled.div`
   position: relative;
   margin: 1rem;
 
+  @media screen and (max-width: ${({theme}) => theme.screen.phone}){
+     width: 80vw;
+     margin: 1.5rem;
+    }
+
   div{
     width: 100%;
     height: 2px;

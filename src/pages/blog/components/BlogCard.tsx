@@ -11,18 +11,21 @@ export interface IBlogCardProps {
 }
 
 interface BlogProps {
-  imageUrl: string | null | undefined
+  imageUrl: string | null | undefined;
 }
 
 export const BlogWrapper = styled.div<BlogProps>`
   width: 25rem;
-  height: ${({imageUrl}) => imageUrl ? "35rem": "17rem"} ;
-  margin: 1rem  .5rem;
+  margin: 1rem 0.5rem;
   background-color: ${({ theme }) => theme.bg.primary};
   box-shadow: 0px 0px 30px #00000038;
   padding: 1rem;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+   width: 100%;
+  }
 
   .image {
     img {
@@ -49,6 +52,12 @@ export const BlogWrapper = styled.div<BlogProps>`
         line-height: 2rem;
         padding-right: 5rem;
         text-transform: capitalize;
+
+        @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+         font-size: 1rem;
+         padding-right: 1rem;
+         line-height: 1.5rem;
+        }
       }
     }
 
@@ -57,6 +66,11 @@ export const BlogWrapper = styled.div<BlogProps>`
       h3 {
         font-size: 0.85rem;
         font-weight: 300;
+
+        @media screen and (max-width: ${({ theme }) => theme.screen.phone}) {
+         font-size: .8rem;
+         text-align: justify;
+        }
       }
     }
 
@@ -75,7 +89,7 @@ export function BlogCard({
   link,
 }: IBlogCardProps) {
   return (
-    <BlogWrapper imageUrl={imageUrl} >
+    <BlogWrapper imageUrl={imageUrl}>
       {imageUrl && (
         <div className="image">
           <img src={imageUrl} alt={description} />

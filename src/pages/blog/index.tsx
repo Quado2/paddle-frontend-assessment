@@ -8,10 +8,25 @@ import { blogData, noPictureData } from "./data";
 import { Glass } from "../../common/components/elements";
 import { Text1, Title2 } from "../../common/components/elements/text";
 import { BsArrowRight } from "react-icons/bs";
+import { useContext, useEffect } from "react";
+import { AppContext } from "../../context/AppContext";
 
 export interface IBlogProps {}
 
 export function Blog(props: IBlogProps) {
+
+  const {setIsBlogShowing} = useContext(AppContext)
+  
+
+  useEffect(() => {
+    setIsBlogShowing(true);
+
+    return () => {
+      setIsBlogShowing(false);
+    }
+  }, [])
+
+
   return (
     <BlogWrapper>
       <Toplabel />

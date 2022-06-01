@@ -4,6 +4,8 @@ import {
   Title,
   Text1,
   Bold,
+  Moon,
+  
 } from "../../common/components/elements";
 import { Detail } from "./components/Details";
 import {
@@ -30,21 +32,22 @@ import {
 } from "./style";
 
 import {HiOutlineArrowNarrowRight} from "react-icons/hi"
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 export interface IAboutUsProps {}
 
 export function AboutUs(props: IAboutUsProps) {
+
+  const {showContactForm} = useContext(AppContext)
+
   return (
     <PageWrapper>
       <Flex>
-        <IntroWrapper>
+        <IntroWrapper show={showContactForm}>
           <LeftGlassWrapper>
-            <InnerPaper
-              width="21rem"
-              height="30rem"
-              color="#970f93"
-            ></InnerPaper>
-            <Glass></Glass>
+            <InnerPaper />
+            <Glass />
           </LeftGlassWrapper>
           <IntroTextWrapper>
             <SmallerTextWrapper>
@@ -55,7 +58,7 @@ export function AboutUs(props: IAboutUsProps) {
             </SmallerTextWrapper>
 
             <div>
-              <Title weight="400" mb="1rem">
+              <Title weight="400" >
                 Built for Saas
               </Title>
               <Title weight="400">and E-commerce</Title>
@@ -68,11 +71,14 @@ export function AboutUs(props: IAboutUsProps) {
               multi-affiliate campaigns in 5 minutes
             </Text1>
           </LowerText>
+          <div className="moon-wrapper">
+            <Moon color="moon_2"/>
+          </div>
         </IntroWrapper>
       </Flex>
       <Flex>
-        <BigText>
-          Mavrick was developed because just like you, we need a product that
+        <BigText show={showContactForm}>
+          Metricks was developed because just like you, we need a product that
           could give <Bold>good value</Bold>
         </BigText>
       </Flex>
