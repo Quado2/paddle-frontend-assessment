@@ -1,5 +1,3 @@
-import { BsPhone } from "react-icons/bs"
-
 
 export const lightTheme = {
   bg: {

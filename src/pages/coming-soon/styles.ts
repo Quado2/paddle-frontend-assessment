@@ -2,9 +2,6 @@ import styled, { Interpolation } from "styled-components";
 import { Title } from "../../common/components/elements";
 import { Flex } from "../../common/components/elements/containers";
 
-interface TextWrapperProps {
-  styles?: Interpolation<React.CSSProperties>;
-}
 
 interface MoonProps {
   show: boolean;

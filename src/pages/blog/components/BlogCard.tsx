@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Text1 } from "../../../common/components/elements";
 import { DashedText } from "../../../common/components/UI";
 
 export interface IBlogCardProps {

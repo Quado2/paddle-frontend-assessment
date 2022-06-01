@@ -1,6 +1,5 @@
-import * as React from 'react';
 import styled from 'styled-components';
-import { Subtitle, Text1 } from '../../../common/components/elements/text';
+import { Subtitle } from '../../../common/components/elements/text';
 
 const Wrapper = styled.div`
 
