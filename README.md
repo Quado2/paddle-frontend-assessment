@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Steps on running the application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -44,3 +44,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Dependencies and libraries used:
+
+1. react-router-dom: Used for implementing routing in the single page application
+2. styled-component: Used for styling
+3. react-icons: Used to the icons on the page
