@@ -11,14 +11,11 @@ import {
   TopWrapper,
 } from "./styles";
 import { Flex } from "../../common/components/elements/containers";
-import {
-  Text1,
-  Moon,
-  PageWrapper,
-} from "../../common/components/elements";
+import { Text1, Moon, PageWrapper } from "../../common/components/elements";
 
 import { AppContext } from "../../context/AppContext";
 import { Timer, ButtonInput, Input } from "./component";
+import { getDateParts } from "../../utils";
 
 export interface IHomeProps {}
 
@@ -34,14 +31,8 @@ export function ComingSoon(props: IHomeProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       const extraDate = DUE_DATE - new Date().getTime();
-      const newDays = Math.floor(extraDate / (24 * 60 * 60 * 1000));
-      const newHours = Math.floor(
-        (extraDate % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
-      );
-      const newMinutes = Math.floor(
-        (extraDate % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const newSeconds = Math.floor((extraDate % (1000 * 60)) / 1000);
+      const { newDays, newHours, newMinutes, newSeconds } =
+        getDateParts(extraDate);
       setSeconds(newSeconds);
       setMinutes(newMinutes);
       setHours(newHours);
@@ -54,19 +45,19 @@ export function ComingSoon(props: IHomeProps) {
   }, []);
   return (
     <PageWrapper>
-     <TopWrapper>
-     <Flex>
-        <TextWrapper>
-          <Text show={showContactForm}>Something awesome is</Text>
-        </TextWrapper>
-      </Flex>
-      <Flex>
-        <TextWrapper>
-          <Text show={showContactForm}>coming soon</Text>
-        </TextWrapper>
-      </Flex>
-     </TopWrapper>
-      
+      <TopWrapper>
+        <Flex>
+          <TextWrapper>
+            <Text show={showContactForm}>Something awesome is</Text>
+          </TextWrapper>
+        </Flex>
+        <Flex>
+          <TextWrapper>
+            <Text show={showContactForm}>coming soon</Text>
+          </TextWrapper>
+        </Flex>
+      </TopWrapper>
+
       <Flex>
         <DetailsWrapper>
           <Text1 weight="300" size="16px">
